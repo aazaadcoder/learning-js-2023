@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGC Changer</title>
+</head>
+
+<body>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+
+</body>
+<script>
+    let setIntervalFunction
+    let colorChange = () => {
+        const red = parseInt(Math.floor(Math.random() * 256))
+        const blue = parseInt(Math.floor(Math.random() * 256))
+        const green = parseInt(Math.floor(Math.random() * 256))
+        const a = Math.random()
+        return `rgba(${red},${green},${blue},${a})`
+    }
+    const startButton = document.querySelector('.start')
+    const stopButton = document.querySelector('.stop')
+
+    const startChangingColor = function () {
+        if (!setIntervalFunction) {
+            setIntervalFunction = setInterval(() => {
+                const body = document.body
+                body.style.backgroundColor = colorChange()
+                console.log("color changed")
+            }, 1000)
+
+
+        }
+    }
+
+    const stopChangingColor = function () {
+        clearInterval(setIntervalFunction)
+        setIntervalFunction = null
+
+    }
+    startButton.addEventListener('click', startChangingColor)
+
+    stopButton.addEventListener('click', stopChangingColor)
+
+
+
+</script>
+
+</html>

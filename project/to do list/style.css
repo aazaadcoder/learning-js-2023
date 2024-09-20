@@ -1,0 +1,59 @@
+body{
+    background-color: #212121;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+/* .heading{
+    
+} */
+
+.inputDiv{
+    padding-top: 60px;
+    
+}
+.box{
+    width: 600px;
+    background-color:bisque;
+    min-height: 100vw;
+    /* justify-content: center; */
+    margin-left: 400px;
+    
+}
+
+.inputTask{
+    min-width: 200px;
+
+}
+
+.addTask{
+    background-color: green;
+}
+
+.addTask:hover{
+    background-color: aqua;
+}
+
+.taskList{
+    
+    
+    margin-top : 50px;
+    text-align: left;
+}
+.individualTask{
+    height: 50px;
+    background-color: gray;
+    width: 400px;
+    margin-left: 100px;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 10px;
+   
+}
+
+.taskData{
+    vertical-align: auto;
+    padding-left: 5px;
+    /* text-decoration: line; */
+}

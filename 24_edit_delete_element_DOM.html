@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit or delete element in DOM</title>
+</head>
+
+<body style=" background-color: #212121; color : #fff">
+
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    
+
+
+</body>
+
+<script>
+
+    const addLanguageToList = function (languageName) {
+        const languageLi = document.createElement('li')
+        languageLi.innerText = languageName
+        const LanguageUl = document.querySelector('.language')
+        LanguageUl.appendChild(languageLi)
+    }// this function traverses the DOM tree of ul so is problematic
+
+    const addLanguageToListBetter = function (languageName) {
+        const languageLi = document.createElement('li')
+        languageLi.appendChild(document.createTextNode(languageName))
+        const LanguageLi = document.querySelector('.language')
+        LanguageLi.appendChild(languageLi)
+    }// more optimized 
+
+    addLanguageToListBetter('c++')
+    addLanguageToListBetter('java')
+    addLanguageToListBetter('python')
+    addLanguageToListBetter('C#')
+    addLanguageToListBetter('Swift')
+    addLanguageToListBetter('goLang')
+
+
+    //edit 
+
+    const secondLanguage = document.querySelector('li:nth-child(2)')
+    // secondLanguage.appendChild(document.createTextNode('My Sql'))
+    secondLanguage.innerHTML = 'Mojo'
+
+    const newLanguageLi = document.createElement('li')
+    newLanguageLi.innerText = "Mojo2"
+    secondLanguage.replaceWith(newLanguageLi)
+
+
+    //edit 
+
+    const firstLanguage = document.querySelector('li:first-child')
+    firstLanguage.outerHTML = '<li>typescripr</li>'
+
+
+    // remove 
+
+    const lastLanguage = document.querySelector("li:last-child")
+    lastLanguage.remove()
+
+</script>
+
+</html>

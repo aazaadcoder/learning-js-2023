@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h2>CHai aur code </h2>
+    <button id="stop">Stop</button>
+    
+</body>
+
+<script>
+    const sayHarshit = function(){
+        console.log("Harshit Negi")
+    }
+
+    const changeText = function(){
+        document.querySelector('h2').innerHTML = "Hello Everyone"
+    }
+
+    setTimeout(sayHarshit, 2000); //(handerler, delay in ms )
+    const textCHanger = setTimeout(changeText, 2000); 
+
+    document.querySelector('#stop').addEventListener('click',()=>{
+        clearTimeout(textCHanger)
+        console.log("Stopped")
+        
+    })
+
+</script>
+</html>

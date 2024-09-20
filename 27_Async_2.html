@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set interval</title>
+</head>
+<body>
+    <h1>Chai and Javascript</h1>
+    <button class="start">start</button>
+    <button class="stop">stop </button>
+    
+</body>
+<script>
+    let setIntervalFxn
+    const sayString = function(string){
+        console.log(string)
+    }
+
+    // const setIntervalFxn = setInterval(sayString,1000,"harshit")
+
+    document.querySelector('.start').addEventListener('click',()=>{
+        if(!setIntervalFxn){
+            setIntervalFxn = setInterval(sayString,2000,"harshit")
+            // console.log("start")
+        }
+        
+    })
+
+    document.querySelector('.stop').addEventListener('click',()=>{
+        clearInterval(setIntervalFxn)
+        setIntervalFxn = null
+        // console.log("stop")
+    })
+    
+</script>
+</html>

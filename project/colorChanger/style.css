@@ -1,0 +1,35 @@
+body{
+    background-color: #212121;
+    color: #fff;
+    max-width:fit-content;
+    
+}
+
+
+
+.button{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+#red{
+    background-color: red;
+}
+
+#blue{
+    background-color: blue;
+}
+
+#grey{
+    background-color: gray
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+/* @media only screen and {
+    
+} */

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div>
+        <h1 class="heading" id="title">Learning DOM using Chai with Code <span style="display:none"> test text</span></h1>
+        <p>Lorem ipsum dolor sit amet.
+        </p>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <input type="password" name="" id="">
+
+        <ul class="parent">
+            <!-- comment -->
+            <li class="list-text">one</li>
+            <li class="list-text">two</li>
+            <li class="list-text">three</li>
+        </ul>
+    </div>
+
+
+</body>
+
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent)
+    // console.log(parent.children)
+    // console.log(parent.children[0])
+
+    // for(let i = 0 ; i < parent.children.length ;i++){
+    //     console.log(parent.children[i].innerHTML)
+    // }
+
+    // parent.children[0].style.color = 'green'
+    // console.log(parent.firstElementChild)
+    // console.log(parent.lastElementChild)
+
+    const liOne = document.querySelector('.list-text')
+
+    // console.log(liOne)
+    // console.log(liOne.parentElement)
+    // console.log(liOne.nextElementSibling)
+
+    console.log(parent.childNodes)
+
+</script>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API request</title>
+    <style>
+        .card {
+            height: fit-content;
+            width: 200px;
+            margin: auto;
+            text-align: center;
+            align-items: center;
+            border: 1px solid;
+            vertical-align:middle;
+        }
+
+        img{
+            height: 150px;
+            width: 150px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="button">Get Data of User</button>
+    <div class="display">
+        <!-- <div class="card">
+            <img src="" alt="">
+            <p class="followerCount"></p>
+        </div> -->
+    </div>
+
+
+    <script>
+        //     The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+
+        // Value	State	Description
+        // 0	UNSENT	Client has been created. open() not called yet.
+        // 1	OPENED	open() has been called.
+        // 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+        // 3	LOADING	Downloading; responseText holds partial data.
+        // 4	DONE	The operation is complete.
+
+        let dataInJSON
+        const button = document.querySelector('.button')
+        console.log("hi")
+        const requestURL = 'https://api.github.com/users/hnr7088'
+        // const requestURL = 'https://api.github.com/users/hiteshchoudhary'
+        const xrl = new XMLHttpRequest()
+        // console.log(xrl.readyState)
+        xrl.onreadystatechange = function () {
+            console.log(xrl.readyState)
+            if (xrl.readyState === 4) {
+                const data = this.responseText
+                console.log(typeof data) // returns string
+                console.log(data)
+                dataInJSON = JSON.parse(data)
+                console.log(dataInJSON) // will give undefined as reponse is in string
+            }
+        }
+        xrl.open('GET', requestURL)
+        console.log("hi2")
+        console.log("after hi2", xrl.readyState)
+        xrl.send()
+        console.log(xrl.readyState)
+        console.log("hi")
+
+        const createCard = function () {
+            const cardSpace = document.querySelector('.display')
+            cardSpace.innerHTML = `
+            <div class="card">
+            <img src=${dataInJSON["avatar_url"]} alt="">
+            <P>${dataInJSON.login}</p>
+            <p class="followerCount">Followers: ${dataInJSON["followers"]}</p>
+            </div>
+            `
+        }
+
+        button.addEventListener('click',createCard)
+
+
+
+    </script>
+
+</body>
+
+</body>
+
+
+</html>

@@ -1,0 +1,20 @@
+body{
+    background-color: #212121;
+    color: #fff;
+}
+
+.outerBox{
+    margin: auto;
+    width: 500px;
+    border: 5px solid white;
+    height: fit-content;
+    text-align: center;
+}
+
+.innerBox{
+    text-align: center;
+}
+
+.playAgainButton{
+    margin-bottom: 20px;
+}

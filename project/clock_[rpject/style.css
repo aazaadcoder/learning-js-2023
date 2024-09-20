@@ -1,0 +1,17 @@
+body{
+    background-color: #212121;
+    color: #fff;
+}
+
+/* .clockBox{
+} */
+.clockDisplay{
+    padding: 50px;
+    border: 10px solid white;
+    width: 190px;
+    border-radius: 50px;
+    text-align: center;
+    margin: auto;
+    /* margin-top: auto; */
+
+}

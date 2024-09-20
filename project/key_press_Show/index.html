@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Key Magic</title>
+    <style>
+        table, td,tr,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .color {
+            margin: auto;
+        }
+        .project{
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="project">
+        <div class="insert">
+            <div class="key">Press a Key and see Magic</div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const insertDiv = document.getElementsByClassName('insert')[0]
+
+    const updateDisplay = function (event) {
+        insertDiv.innerHTML = `<div class = 'color'>
+            <table>
+  <tr>
+    <th>key</th>
+    <th>key Code</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${event.key === " " ? "space" : event.key}</td>
+    <td>${event.keyCode}</td>
+    <td>${event.code}</td>
+  </tr>
+  
+</table>
+            </div>`
+
+    }
+
+
+    window.addEventListener('keydown', (event) => {
+        updateDisplay(event)
+
+    })
+</script>
+
+</html>
